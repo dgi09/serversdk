@@ -1,0 +1,2 @@
+# serversdk
+Go server sdk
