@@ -14,4 +14,5 @@ require (
 	github.com/aead/poly1305 v0.0.0-20180717145839-3fee0db0b635 // indirect
 	github.com/pkg/errors v0.8.0 // indirect
 	golang.org/x/sys v0.3.0 // indirect
+	gopkg.in/ini.v1 v1.67.0
 )
