@@ -1,6 +1,10 @@
 package container
 
-import "sort"
+import (
+	"sort"
+
+	"github.com/dgi09/serversdk/compare"
+)
 
 type List[T any] []T
 
@@ -31,7 +35,7 @@ func (list *List[T]) RemoveAt(index int) {
 	*list = append(lVal[:index], lVal[index+1:]...)
 }
 
-func (list List[T]) IndexOf(val T, comp Comparer) int {
+func (list List[T]) IndexOf(val T, comp compare.Comparer) int {
 	result := -1
 
 	for i, v := range list {
@@ -62,7 +66,7 @@ func (list *List[T]) Set(i int, v T) {
 	lVal[i] = v
 }
 
-func (list *List[T]) Remove(val T, comp Comparer) {
+func (list *List[T]) Remove(val T, comp compare.Comparer) {
 	index := list.IndexOf(val, comp)
 
 	if index != -1 {

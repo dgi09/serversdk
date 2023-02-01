@@ -1,4 +1,4 @@
-package container
+package compare
 
 import (
 	"testing"
@@ -16,6 +16,43 @@ func TestIntComparer(t *testing.T) {
 
 	for _, tt := range tests {
 		if tt.res != int(IntComparer(tt.a, tt.b)) {
+			t.FailNow()
+		}
+	}
+}
+
+func TestBoolComparer(t *testing.T) {
+	tests := []struct {
+		a, b bool
+
+		res int
+	}{
+		{false, true, -1},
+		{false, false, 0},
+		{true, true, 0},
+		{true, false, 1},
+	}
+
+	for _, tt := range tests {
+		if tt.res != int(BoolComparer(tt.a, tt.b)) {
+			t.FailNow()
+		}
+	}
+}
+
+func TestFloatComparer(t *testing.T) {
+	tests := []struct {
+		a, b float32
+		res  int
+	}{
+
+		{10.4, 20.4, -1},
+		{20, 10, 1},
+		{10.3, 10.3, 0},
+	}
+
+	for _, tt := range tests {
+		if tt.res != int(FloatComparer(tt.a, tt.b)) {
 			t.FailNow()
 		}
 	}
