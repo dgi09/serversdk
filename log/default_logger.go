@@ -34,7 +34,7 @@ func (l *DefaultLogger) Error(msg string) {
 	l.execute(Error, msg)
 }
 
-func (l *DefaultLogger) Information(msg string) {
+func (l *DefaultLogger) InformationTest(msg string) {
 	l.execute(Information, msg)
 }
 
