@@ -49,6 +49,7 @@ func main() {
 		{3, 40},
 		{3, 60},
 		{1, 30},
+		{1, 40},
 	}
 
 	set = query.SliceApply(set, q, PersonClauseResolve, PersonOrderResolver)
